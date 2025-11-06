@@ -9,7 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => res.send("Hello Testing"));
+app.get("/", (req, res) => {
+  console.log("default called");
+  res.send("Hello Testing");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 
