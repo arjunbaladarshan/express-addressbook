@@ -9,3 +9,5 @@ export const db = await mysql.createPool({
   password: process.env.DB_PASS || "",
   database: process.env.DB_NAME || "testdb",
 });
+
+console.log("db = ", db);
