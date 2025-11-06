@@ -13,8 +13,10 @@ app.get("/", (req, res) => {
   console.log("default called");
   res.send("Hello Testing");
 });
-// app.use("/api/auth", authRoutes);
-// app.use("/api/contact", contactRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Server running on port ${PORT}`)
+);
